@@ -1,5 +1,9 @@
 package empresaEvaluacion;
 
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
+
 public class Usuario implements Asesoria {
 
 	private String nombre;
@@ -33,11 +37,11 @@ public class Usuario implements Asesoria {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 
-	public String getRut() {
+	public String getRun() {
 		return run;
 	}
 
-	public void setRut(String run) {
+	public void setRun(String run) {
 		this.run = run;
 	}
 
@@ -46,11 +50,21 @@ public class Usuario implements Asesoria {
 		return "Usuario [nombre=" + nombre + ", fechaNacimiento=" + fechaNacimiento + ", rut=" + run + "]";
 	}
 
+	public void mostrarEdad() {
+
+		DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		LocalDate fechaNac = LocalDate.parse(fechaNacimiento, fmt);
+		LocalDate ahora = LocalDate.now();
+		Period periodo = Period.between(fechaNac, ahora);
+		System.out.printf("El Usuario tiene %s años", periodo.getYears() /* periodo.getMonths(), periodo.getDays() */);
+
+	}
+
 	@Override
 	public void analizarUsuario() {
 
-		System.out.println("nombre: " + getNombre());
-
+		System.out.println("Nombre: " + getNombre());
+		System.out.println("Run: " + getRun());
 	}
 
 }
