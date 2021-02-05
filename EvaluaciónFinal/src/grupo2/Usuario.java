@@ -4,17 +4,17 @@ public class Usuario implements Asesoria {
 
 	private String nombre;
 	private String fechaNacimiento;
-	private String rut;
+	private String run;
 
 	public Usuario() {
 
 	}
 
-	public Usuario(String nombre, String fechaNacimiento, String rut) {
+	public Usuario(String nombre, String fechaNacimiento, String run) {
 		super();
 		this.nombre = nombre;
 		this.fechaNacimiento = fechaNacimiento;
-		this.rut = rut;
+		this.run = run;
 	}
 
 	public String getNombre() {
@@ -34,16 +34,16 @@ public class Usuario implements Asesoria {
 	}
 
 	public String getRut() {
-		return rut;
+		return run;
 	}
 
-	public void setRut(String rut) {
-		this.rut = rut;
+	public void setRut(String run) {
+		this.run = run;
 	}
 
 	@Override
 	public String toString() {
-		return "Usuario [nombre=" + nombre + ", fechaNacimiento=" + fechaNacimiento + ", rut=" + rut + "]";
+		return "Usuario [nombre=" + nombre + ", fechaNacimiento=" + fechaNacimiento + ", rut=" + run + "]";
 	}
 
 	@Override
