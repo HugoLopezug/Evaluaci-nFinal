@@ -1,4 +1,4 @@
-package grupo2;
+package empresaEvaluacion;
 
 public class Administrativo extends Usuario {
 	

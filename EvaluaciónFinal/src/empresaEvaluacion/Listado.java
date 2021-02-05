@@ -1,4 +1,4 @@
-package grupo2;
+package empresaEvaluacion;
 
 import java.util.ArrayList;
 import java.util.List;
