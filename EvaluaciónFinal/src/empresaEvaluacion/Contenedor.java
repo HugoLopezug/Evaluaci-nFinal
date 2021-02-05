@@ -3,11 +3,11 @@ package empresaEvaluacion;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Listado implements Asesoria {
+public class Contenedor implements Asesoria {
 
 	private List<Asesoria> lista;
 
-	public Listado() {
+	public Contenedor() {
 		lista = new ArrayList<Asesoria>();
 	}
 

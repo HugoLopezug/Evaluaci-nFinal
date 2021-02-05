@@ -4,7 +4,7 @@ public class main {
 
 	public static void main(String[] args) {
 
-		Listado sc = new Listado();
+		Contenedor sc = new Contenedor();
 		Profesional prof1 = new Profesional("Daniel", "18/02/1990", "17257626-5", "Ingeniera ambiental", "14/01/2021");
 		Profesional prof2 = new Profesional("Andres", "13/01/1987", "18789568-7", "Ingeniera agronomo", "11/01/2019");
 		Profesional prof3 = new Profesional("Francisca", "20/08/1992", "18457985-8", "Profesora Ingles", "11/09/2018");
