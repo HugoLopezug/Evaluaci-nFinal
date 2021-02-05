@@ -1,6 +1,6 @@
 package empresaEvaluacion;
 
-public class Cliente {
+public class Cliente extends Usuario {
 
 	private String rut;
 	private String nombres;
