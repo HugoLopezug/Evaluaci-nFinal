@@ -126,4 +126,11 @@ public class Cliente extends Usuario {
 				+ edad + "]";
 	}
 
+	@Override
+	public void analizarUsuario() {
+		super.analizarUsuario();
+		System.out.println("Dirección Cliente: " + getDireccion());
+		System.out.println("Run: " + getComuna());
+	}
+
 }
