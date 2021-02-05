@@ -86,7 +86,7 @@ public class Capacitacion {
 	String mostrarDetalle() {
 		String detalle;
 
-		detalle = "La capacitacion sera en " + lugar + " a las " + hora + ", del día " + dia + " y durará "
+		detalle = "La capacitacion será en " + lugar + " a las " + hora + ", del día " + dia + " y durará "
 				+ duracion * 60 + " minutos";
 
 		return detalle;
