@@ -130,7 +130,7 @@ public class Cliente extends Usuario {
 	public void analizarUsuario() {
 		super.analizarUsuario();
 		System.out.println("Dirección Cliente: " + getDireccion());
-		System.out.println("Run: " + getComuna());
+		System.out.println("Comuna Cliente: " + getComuna());
 	}
 
 }

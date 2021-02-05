@@ -40,8 +40,8 @@ public class Profesional extends Usuario {
 	public void analizarUsuario() {
 
 		super.analizarUsuario();
-		System.out.println("titulo: " + getTitulo());
-		System.out.println("fecha de ingreso: " + getFechaIngreso());
+		System.out.println("Titulo: " + getTitulo());
+		System.out.println("Fecha de ingreso: " + getFechaIngreso());
 	}
 
 }
