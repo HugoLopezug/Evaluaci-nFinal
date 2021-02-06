@@ -2,7 +2,6 @@ package empresaEvaluacion;
 
 public class Capacitacion {
 
-	
 	private int identificador;
 	private String rutCliente;
 	private String dia;
@@ -12,19 +11,19 @@ public class Capacitacion {
 	private int cantidadAsistentes;
 
 	public Capacitacion() {
-		super();
+		
 	}
 
-	public Capacitacion(int cantidadAsistentes, int identificador, String rutCliente, String dia, String hora,
-			String lugar, Integer duracion) {
+	public Capacitacion(int identificador, String rutCliente, String dia, String hora, String lugar, Integer duracion,
+			int cantidadAsistentes) {
 		super();
-		this.cantidadAsistentes = cantidadAsistentes;
 		this.identificador = identificador;
 		this.rutCliente = rutCliente;
 		this.dia = dia;
 		this.hora = hora;
 		this.lugar = lugar;
 		this.duracion = duracion;
+		this.cantidadAsistentes = cantidadAsistentes;
 	}
 
 	public int getCantidadAsistentes() {
@@ -94,9 +93,9 @@ public class Capacitacion {
 
 	@Override
 	public String toString() {
-		return "Capacitacion [cantidadAsistentes=" + cantidadAsistentes + ", identificador=" + identificador
-				+ ", rutCliente=" + rutCliente + ", dia=" + dia + ", hora=" + hora + ", lugar=" + lugar + ", duracion="
-				+ duracion + "]";
+		return "Capacitacion [identificador=" + identificador + ", rutCliente=" + rutCliente + ", dia=" + dia
+				+ ", hora=" + hora + ", lugar=" + lugar + ", duracion=" + duracion + ", cantidadAsistentes="
+				+ cantidadAsistentes + "]";
 	}
 
 }
