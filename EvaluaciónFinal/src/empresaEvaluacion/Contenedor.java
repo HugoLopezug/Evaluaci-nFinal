@@ -1,27 +1,17 @@
 package empresaEvaluacion;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class Contenedor implements Asesoria {
+public class Contenedor {
 
-	
 	private List<Asesoria> listaAsesoria;
 	private List<Capacitacion> listaCapacitacion;
 
-	
-	
-	public Contenedor() {
-		listaAsesoria = new ArrayList<Asesoria>();
-		listaCapacitacion  = new ArrayList<Capacitacion>();
-	}
-
-	
 	public Contenedor(List<Asesoria> listaAsesoria, List<Capacitacion> listaCapacitacion) {
 		super();
 		this.listaAsesoria = listaAsesoria;
 		this.listaCapacitacion = listaCapacitacion;
-		
+
 	}
 
 	public List<Asesoria> getListaAsesoria() {
@@ -40,16 +30,29 @@ public class Contenedor implements Asesoria {
 		this.listaCapacitacion = listaCapacitacion;
 	}
 
-	public void agregarUsuario(Asesoria usuario) {
-
-		listaAsesoria.add(usuario);
-
-	}
 
 	public void analizarUsuario() {
+
+		System.out.println("-------------Lista Usuarios---------------");
 		for (Asesoria auxUsuario : listaAsesoria) {
 			auxUsuario.analizarUsuario();
-			System.out.println("");
+			System.out.println("---------------------------------------");
 		}
 	}
+
+	public void mostrarCapacitacion() {
+		System.out.println("-------------Lista Capacitaciones---------------");
+		for (Capacitacion auxCapacitacion : listaCapacitacion) {
+			System.out.println("Identificador: "+ auxCapacitacion.getIdentificador());
+			System.out.println("Rut Cliente: "+ auxCapacitacion.getRutCliente());
+			System.out.println("Fía: "+ auxCapacitacion.getDia());
+			System.out.println("Hora: "+ auxCapacitacion.getHora());
+			System.out.println("Lugar: "+ auxCapacitacion.getLugar());
+			System.out.println("Duración: "+ auxCapacitacion.getDuracion());
+			System.out.println("Cantidad Asistentes: "+ auxCapacitacion.getCantidadAsistentes());
+			System.out.println("---------------------------------------------");
+		}
+
+	}
+
 }
