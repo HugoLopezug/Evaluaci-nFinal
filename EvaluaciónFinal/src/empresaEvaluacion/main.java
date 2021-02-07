@@ -16,14 +16,7 @@ public class main {
 
 		Contenedor sc2 = new Contenedor(listaAsesoria, listaCapacitacion);
 		/*
-		 * // Menú
-		 * 
-		 * 
-		 * 
-		 * 
-		 * // 4 Almacenar Capacitacion Capacitacion capacitacion1 = new
-		 * 
-		 * 
+		 
 		 * Capacitacion(22142, "2532647132-2", "16/20/2021", "11:20", "Santiago", 16,
 		 * 6); listaCapacitacion.add(capacitacion1);
 		 * 
@@ -46,9 +39,7 @@ public class main {
 		 * // 6 Listar USuarios sc2.analizarUsuario();
 		 * System.out.println(sc2.getListaAsesoria().size());
 		 * System.out.println(sc2.getListaCapacitacion().size());
-		 * 
-		 * // (FALTA) 7 Listar usuario por tipo
-		 */
+	*/
 
 		Integer opcion, rut, run, sistsalud, edad, id, duracionCapacitacion, asistCapacitacion;
 		String fechaNacimiento, nombreUsuario, nombresCliente, apellidosCliente, telefono, afp, direccion, comuna,
@@ -57,7 +48,7 @@ public class main {
 
 		Scanner leer = new Scanner(System.in);
 
-		// 1 2 3 Almacenar Cliente, administrativo Profesional
+		// MENÚ
 
 		System.out.println("INVENTARIO DE PERFILES Y CAPACITACIONES MINERA GRUPO 02");
 		System.out.println("");
@@ -72,20 +63,23 @@ public class main {
 				System.out.println("7.- Listar usuarios ingresados por tipo");
 				System.out.println("8.- Mostrar capacitaciones ingresadas");
 				System.out.println("9.- SALIR");
+				
 				opcion = validarEnteros();
 
 			} while (opcion == null);
 
 			switch (opcion) {
+				
+				// 1 Almacenar Cliente 
 				case 1:
 
 					Cliente cliente1 = new Cliente();
 
-					System.out.println("Ingresando perfil de Cliente");
+					System.out.println("1. Ingresando perfil de Cliente");
 					do {
 						System.out.println("Ingrese nombre de usuario");
 						nombreUsuario = leer.nextLine();
-					} while (nombreUsuario.length() < 10 || nombreUsuario.length() > 30);
+					} while (nombreUsuario.length() < 10 || nombreUsuario.length() > 50);
 					cliente1.setNombre(nombreUsuario);
 					do {
 						System.out.println("Ingrese fecha de nacimiento de usuario");
@@ -147,7 +141,8 @@ public class main {
 					pausa();
 
 					break;
-
+					
+				// Alamacenar Profecional 
 				case 2:
 
 					Profesional profesional1 = new Profesional();
@@ -186,7 +181,8 @@ public class main {
 					pausa();
 
 					break;
-
+					
+				// Almacenar Administrativo
 				case 3:
 
 					Administrativo administrativo1 = new Administrativo();
@@ -224,7 +220,8 @@ public class main {
 					pausa();
 
 					break;
-
+					
+				// Almacenar Capacitación 
 				case 4:
 
 					Capacitacion capacitacion1 = new Capacitacion();
@@ -271,7 +268,8 @@ public class main {
 					listaCapacitacion.add(capacitacion1);
 
 					break;
-
+					
+				// Eliminar Usuario
 				case 5:
 
 					System.out.println("Eliminando usuario" + "\n");
@@ -284,14 +282,15 @@ public class main {
 					listaAsesoria.remove(eliminando);
 
 					break;
-
+					
+				// Lisar Usuarios 
 				case 6:
 
 					System.out.println("Mostrando usuarios registrados" + "\n");
 					sc2.analizarUsuario();
 
 					break;
-
+				// Listar Usuario por tipo 
 				case 7:
 
 					System.out.println("Mostrando usuarios registrados" + "\n");
@@ -300,14 +299,16 @@ public class main {
 					sc2.mostrarUsuariosPorTipo(elegirUsuario);
 
 					break;
-
+					
+				// Listar Capacitaciones 
 				case 8:
 
 					System.out.println("Capacitaciones registradas" + "\n");
 					sc2.mostrarCapacitacion();
 
 					break;
-
+					
+				// Salir
 				case 9:
 
 					System.out.println("Cerrando base de datos" + "\n");
@@ -350,8 +351,8 @@ public class main {
 	public static Integer validarEnteros() {
 		Integer num;
 		try {
-			Scanner sc = new Scanner(System.in);
-			num = sc.nextInt();
+			Scanner scanner = new Scanner(System.in);
+			num = scanner.nextInt();
 		} catch (Exception e) {
 			num = null;
 		}
@@ -368,7 +369,7 @@ public class main {
 
 	public static boolean validarFecha(String fecha) {
 		try {
-			SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
+			SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/mm/yyyy");
 			formatoFecha.parse(fecha);
 		} catch (ParseException e) {
 			return false;
