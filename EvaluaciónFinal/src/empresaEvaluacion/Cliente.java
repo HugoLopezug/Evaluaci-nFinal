@@ -2,7 +2,7 @@ package empresaEvaluacion;
 
 public class Cliente extends Usuario {
 
-	private String rut;
+	private Integer rut;
 	private String nombres;
 	private String apellidos;
 	private Integer telefono;
@@ -11,12 +11,9 @@ public class Cliente extends Usuario {
 	private String direccion;
 	private String comuna;
 	private Integer edad;
+	
 
-	public Cliente() {
-
-	}
-
-	public Cliente(String nombre, String fechaNacimiento, String run, String rut, String nombres, String apellidos,
+	public Cliente(String nombre, String fechaNacimiento, Integer run, Integer rut, String nombres, String apellidos,
 			Integer telefono, String afp, Integer salud, String direccion, String comuna, Integer edad) {
 		super(nombre, fechaNacimiento, run);
 		this.rut = rut;
@@ -30,12 +27,15 @@ public class Cliente extends Usuario {
 		this.edad = edad;
 	}
 
+	public Cliente() {
 
-	public String getRut() {
+	}
+
+	public Integer getRut() {
 		return rut;
 	}
 
-	public void setRut(String rut) {
+	public void setRut(Integer rut) {
 		this.rut = rut;
 	}
 
