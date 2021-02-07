@@ -144,25 +144,28 @@ public class main {
 					
 					// Almacenar Direccion Cliente
 					do {
-						System.out.println("Ingrese direccion de cliente");
+						System.out.println("Ingrese direccion de cliente (maximo 70 caracteres)");
 						direccion = leer.nextLine().strip();
 					} while (direccion.length() > 70 || direccion == "");
 					cliente1.setDireccion(direccion);
 					
 					// Almacenar Comuna Cliente
 					do {
-						System.out.println("Ingrese comuna de cliente");
+						System.out.println("Ingrese comuna de cliente  (maximo 50 caracteres)");
 						comuna = leer.nextLine().strip();
 					} while (comuna.length() > 50 || comuna == "");
 					cliente1.setComuna(comuna);
 					
 					// Almacenar Edad Cliente
 					do {
-						System.out.println("Ingrese edad de cliente" + "\n");
+						System.out.println("Ingrese edad de cliente (rango de edad 0-150 años)" + "\n");
 						edad = validarEnteros();
-					} while (edad == null || (edad < 0 || edad > 150));
+					} while (edad == null || edad < 0 || edad > 150);
 					cliente1.setEdad(edad);
+					
+					// Almacena Cliente  en Array
 					listaAsesoria.add(cliente1);
+					
 					pausa();
 
 					break;
