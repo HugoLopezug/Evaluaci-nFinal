@@ -128,16 +128,18 @@ public class main {
 					
 					// Almacenar AFP Cliente
 					do {
-						System.out.println("Ingrese AFP de cliente");
+						System.out.println("Ingrese AFP de cliente (min 4 caracteres, max 30)");
 						afp = leer.nextLine().strip();
 					} while (afp.length() < 4 || afp.length() > 30);
 					cliente1.setAfp(afp);
 					
 					// Almacenar Sistema de Salud Cliente
 					do {
-						System.out.println("Ingrese sistema de salud de cliente: 1.- Fonasa 2.- Isapre");
+						System.out.println("Sistema de salud de cliente, Ingrese:");
+						System.out.println("1 para Fonasa ");
+						System.out.println("2 para Isapre ");
 						sistsalud = validarEnteros();
-					} while (sistsalud == null || (sistsalud < 1 || sistsalud > 2));
+					} while (sistsalud == null || sistsalud < 1 || sistsalud > 2);
 					cliente1.setSalud(sistsalud);
 					
 					// Almacenar Direccion Cliente
