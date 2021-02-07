@@ -76,25 +76,28 @@ public class main {
 					Cliente cliente1 = new Cliente();
 
 					System.out.println("1. Ingresando perfil de Cliente");
+					
 					// Almacenar Nombre de Usuario
 					do {
 						System.out.println("Ingrese nombre de usuario");
 						nombreUsuario = leer.nextLine().strip();
 					} while (nombreUsuario.length() < 10 || nombreUsuario.length() > 50);
 					cliente1.setNombre(nombreUsuario);
+					
 					// Almacenar fecha de nacimiento de Usuario
 					do {
 						System.out.println("Ingrese fecha de nacimiento de usuario");
 						fechaNacimiento = leer.nextLine();
 						validadorFecha = validarFecha(fechaNacimiento);
 					} while (validadorFecha == false);
+					
 					// Almacenar Run Usuario
 					do {
 						System.out.println("Ingrese RUN de usuario sin digito verificador");
 						run = validarEnteros();
-					} while (run == null || run < 9999999);
+					} while (run == null || run < 99999999);
 					cliente1.setRun(run);
-					
+					// Almacenar Rut Cliente
 					do {
 						System.out.println("Ingrese RUT de cliente sin digito verificador");
 						rut = validarEnteros();
