@@ -2,20 +2,20 @@ package empresaEvaluacion;
 
 public class Capacitacion {
 
-	private int identificador;
-	private String rutCliente;
+	private Integer identificador;
+	private Integer rutCliente;
 	private String dia;
 	private String hora;
 	private String lugar;
 	private Integer duracion;
-	private int cantidadAsistentes;
+	private Integer cantidadAsistentes;
 
 	public Capacitacion() {
 		
 	}
 
-	public Capacitacion(int identificador, String rutCliente, String dia, String hora, String lugar, Integer duracion,
-			int cantidadAsistentes) {
+	public Capacitacion(Integer identificador, Integer rutCliente, String dia, String hora, String lugar,
+			Integer duracion, Integer cantidadAsistentes) {
 		super();
 		this.identificador = identificador;
 		this.rutCliente = rutCliente;
@@ -26,27 +26,19 @@ public class Capacitacion {
 		this.cantidadAsistentes = cantidadAsistentes;
 	}
 
-	public int getCantidadAsistentes() {
-		return cantidadAsistentes;
-	}
-
-	public void setCantidadAsistentes(int cantidadAsistentes) {
-		this.cantidadAsistentes = cantidadAsistentes;
-	}
-
-	public int getIdentificador() {
+	public Integer getIdentificador() {
 		return identificador;
 	}
 
-	public void setIdentificador(int identificador) {
+	public void setIdentificador(Integer identificador) {
 		this.identificador = identificador;
 	}
 
-	public String getRutCliente() {
+	public Integer getRutCliente() {
 		return rutCliente;
 	}
 
-	public void setRutCliente(String rutCliente) {
+	public void setRutCliente(Integer rutCliente) {
 		this.rutCliente = rutCliente;
 	}
 
@@ -80,6 +72,14 @@ public class Capacitacion {
 
 	public void setDuracion(Integer duracion) {
 		this.duracion = duracion;
+	}
+
+	public Integer getCantidadAsistentes() {
+		return cantidadAsistentes;
+	}
+
+	public void setCantidadAsistentes(Integer cantidadAsistentes) {
+		this.cantidadAsistentes = cantidadAsistentes;
 	}
 
 	String mostrarDetalle() {
