@@ -39,6 +39,31 @@ public class Contenedor {
 			System.out.println("---------------------------------------");
 		}
 	}
+	
+	public Asesoria eliminarUsuario(int rut) {
+
+		for (Asesoria usuario : listaAsesoria) {
+
+			if (rut == usuario.darRut())
+				return usuario;
+		}
+		return null;
+
+	}
+
+	public void mostrarUsuariosPorTipo(String nombreClase) {
+
+		System.out.println("-------------------------");
+		for (Asesoria usuario : listaAsesoria) {
+
+			if (nombreClase.equals(usuario.getClass().getSimpleName())) {
+				usuario.analizarUsuario();
+				System.out.println("-------------------------");
+			}
+
+		}
+
+	}
 
 	public void mostrarCapacitacion() {
 		System.out.println("-------------Lista Capacitaciones---------------");
