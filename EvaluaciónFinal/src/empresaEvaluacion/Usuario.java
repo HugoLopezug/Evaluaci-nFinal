@@ -8,13 +8,13 @@ public class Usuario implements Asesoria {
 
 	private String nombre;
 	private String fechaNacimiento;
-	private String run;
+	private Integer run;
 
 	public Usuario() {
 
 	}
 
-	public Usuario(String nombre, String fechaNacimiento, String run) {
+	public Usuario(String nombre, String fechaNacimiento, Integer run) {
 		super();
 		this.nombre = nombre;
 		this.fechaNacimiento = fechaNacimiento;
@@ -37,11 +37,11 @@ public class Usuario implements Asesoria {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 
-	public String getRun() {
+	public Integer getRun() {
 		return run;
 	}
 
-	public void setRun(String run) {
+	public void setRun(Integer run) {
 		this.run = run;
 	}
 
@@ -65,6 +65,13 @@ public class Usuario implements Asesoria {
 
 		System.out.println("Nombre: " + getNombre());
 		System.out.println("Run: " + getRun());
+	}
+	
+	
+	@Override
+	public int darRut() {
+		return getRun();
+		
 	}
 
 }
