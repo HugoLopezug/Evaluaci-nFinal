@@ -79,7 +79,7 @@ public class main {
 					// Almacenar Nombre de Usuario
 					do {
 						System.out.println("Ingrese nombre de usuario");
-						nombreUsuario = leer.nextLine();
+						nombreUsuario = leer.nextLine().strip();
 					} while (nombreUsuario.length() < 10 || nombreUsuario.length() > 50);
 					cliente1.setNombre(nombreUsuario);
 					// Almacenar fecha de nacimiento de Usuario
