@@ -50,7 +50,7 @@ public class main {
 
 		// MENÚ
 
-		System.out.println("INVENTARIO DE PERFILES Y CAPACITACIONES MINERA GRUPO 02");
+		System.out.println("INVENTARIO DE PERFILES Y CAPACITACIONES");
 		System.out.println("");
 		do {
 			do {
@@ -75,7 +75,7 @@ public class main {
 
 					Cliente cliente1 = new Cliente();
 
-					System.out.println("1. Ingresando perfil de Cliente");
+					System.out.println("1. Ingresando perfil de Cliente (min 10 caracteres, max 50)");
 					
 					// Almacenar Nombre de Usuario
 					do {
@@ -86,59 +86,75 @@ public class main {
 					
 					// Almacenar fecha de nacimiento de Usuario
 					do {
-						System.out.println("Ingrese fecha de nacimiento de usuario");
+						System.out.println("Ingrese fecha de nacimiento de usuario (formato dd/mm/aa)");
 						fechaNacimiento = leer.nextLine();
 						validadorFecha = validarFecha(fechaNacimiento);
 					} while (validadorFecha == false);
 					
 					// Almacenar Run Usuario
 					do {
-						System.out.println("Ingrese RUN de usuario sin digito verificador");
+						System.out.println("Ingrese RUN de usuario sin digito verificador (hasta 8 digitos)");
 						run = validarEnteros();
 					} while (run == null || run < 99999999);
 					cliente1.setRun(run);
+					
 					// Almacenar Rut Cliente
 					do {
-						System.out.println("Ingrese RUT de cliente sin digito verificador");
+						System.out.println("Ingrese RUT de cliente sin digito verificador (hasta 8 digitos)");
 						rut = validarEnteros();
-					} while (rut == null || rut >= 99999999);
+					} while (rut == null || rut < 99999999);
 					cliente1.setRut(rut);
-
+					
+					// Almacenar Nombres Cliente
 					leer.nextLine();
 					do {
-						System.out.println("Ingrese nombres de cliente");
-						nombresCliente = leer.nextLine();
+						System.out.println("Ingrese nombres de cliente (min 5 caracteres, max 30)");
+						nombresCliente = leer.nextLine().strip();
 					} while (nombresCliente.length() < 5 || nombresCliente.length() > 30);
 					cliente1.setNombre(nombresCliente);
+					
+					// Almacenar Apellidos Cliente
 					do {
-						System.out.println("Ingrese apellidos de cliente");
-						apellidosCliente = leer.nextLine();
+						System.out.println("Ingrese apellidos de cliente (min 5 caracteres, max 30)");
+						apellidosCliente = leer.nextLine().strip();
 					} while (apellidosCliente.length() < 5 || apellidosCliente.length() > 30);
 					cliente1.setApellidos(apellidosCliente);
+					
+					// Almacenar Telefono Cliente
 					do {
-						System.out.println("Ingrese telefono de cliente ");
-						telefono = leer.nextLine();
+						System.out.println("Ingrese telefono de cliente (8 digitos) ");
+						telefono = leer.nextLine().strip();
 					} while (telefono.length() != 8 || !telefono.matches("[0-9]*"));
+					
+					// Almacenar AFP Cliente
 					do {
 						System.out.println("Ingrese AFP de cliente");
-						afp = leer.nextLine();
+						afp = leer.nextLine().strip();
 					} while (afp.length() < 4 || afp.length() > 30);
 					cliente1.setAfp(afp);
+					
+					// Almacenar Sistema de Salud Cliente
 					do {
 						System.out.println("Ingrese sistema de salud de cliente: 1.- Fonasa 2.- Isapre");
 						sistsalud = validarEnteros();
 					} while (sistsalud == null || (sistsalud < 1 || sistsalud > 2));
 					cliente1.setSalud(sistsalud);
+					
+					// Almacenar Direccion Cliente
 					do {
 						System.out.println("Ingrese direccion de cliente");
 						direccion = leer.nextLine().strip();
 					} while (direccion.length() > 70 || direccion == "");
 					cliente1.setDireccion(direccion);
+					
+					// Almacenar Comuna Cliente
 					do {
 						System.out.println("Ingrese comuna de cliente");
 						comuna = leer.nextLine().strip();
 					} while (comuna.length() > 50 || comuna == "");
 					cliente1.setComuna(comuna);
+					
+					// Almacenar Edad Cliente
 					do {
 						System.out.println("Ingrese edad de cliente" + "\n");
 						edad = validarEnteros();
