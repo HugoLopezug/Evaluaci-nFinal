@@ -323,7 +323,7 @@ public class main {
 					//Almacenar lugar Capacitación 
 					do {
 						System.out.println("Ingrese lugar de la capacitacion min 10 caracteres, max 50)");
-						lugarCapacitacion = leer.nextLine();
+						lugarCapacitacion = leer.nextLine().strip();
 					} while (lugarCapacitacion.length() < 10 || lugarCapacitacion.length() > 50);
 					capacitacion1.setLugar(lugarCapacitacion);
 					
