@@ -182,36 +182,44 @@ public class main {
 					System.out.println("Ingresando perfil profesional");
 					System.out.println("             ");
 					
-					// Alamacenar Nombre Profecional 
+					// Alamacenar Nombre Usuario
 					do {
-						System.out.println("Ingrese nombre del profesional");
+						System.out.println("Ingrese nombre del Usuario (min 10 caracteres, max 50)");
 						nombreUsuario = leer.nextLine().strip();
-					} while (nombreUsuario.length() < 10 || nombreUsuario.length() > 30);
+					} while (nombreUsuario.length() < 10 || nombreUsuario.length() > 50);
 					profesional1.setNombre(nombreUsuario);
-
+					
+					// Alamacenar Fecha de nacimiento del Usuario
 					do {
-						System.out.println("Ingrese fecha de nacimiento del profesional");
+						System.out.println("Ingrese fecha de nacimiento del Usuario (formato dd/mm/aaaa)");
 						fechaNacimiento = leer.nextLine();
 						validadorFecha = validarFecha(fechaNacimiento);
 					} while (validadorFecha == false);
 					profesional1.setFechaNacimiento(fechaNacimiento);
-
+					
+					// Almacenar Run Usuario
 					do {
-						System.out.println("Ingrese RUN del profesional sin digito verificador	");
+						System.out.println("Ingrese RUN de usuario sin digito verificador (hasta 8 digitos)");
 						run = validarEnteros();
-					} while (run == null || run > 99999999);
+					} while (run == null || run > 99999999 || run < 999999);
 					profesional1.setRun(run);
+					
+					// Alamacenar Titulo Profeional 
 					do {
-						System.out.println("Ingrese titulo profesional");
-						titulo = leer.nextLine();
+						System.out.println("Ingrese titulo profesional (min 10 caracteres, max 50)");
+						titulo = leer.nextLine().strip();
 					} while (titulo.length() < 10 || titulo.length() > 50);
 					profesional1.setTitulo(titulo);
+					
+					// Alamacenar Fecha ingreso Profeional 
 					do {
-						System.out.println("Ingrese fecha de ingreso");
+						System.out.println("Ingrese fecha de ingreso (formato (dd/mm/aaaa)");
 						fechaIngreso = leer.nextLine();
 						validadorFecha = validarFecha(fechaIngreso);
 					} while (validadorFecha == false);
 					profesional1.setFechaIngreso(fechaIngreso);
+					
+					// Almacena profesional  en Array
 					listaAsesoria.add(profesional1);
 					pausa();
 
