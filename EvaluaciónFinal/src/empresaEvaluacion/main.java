@@ -2,7 +2,10 @@ package empresaEvaluacion;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -87,7 +90,7 @@ public class main {
 					
 					// Almacenar fecha de nacimiento de Usuario
 					do {
-						System.out.println("Ingrese fecha de nacimiento de usuario (formato dd/mm/aa)");
+						System.out.println("Ingrese fecha de nacimiento de usuario (formato dd/mm/aaaa)");
 						fechaNacimiento = leer.nextLine();
 						validadorFecha = validarFecha(fechaNacimiento);
 					} while (validadorFecha == false);
@@ -176,8 +179,9 @@ public class main {
 
 					Profesional profesional1 = new Profesional();
 
-					System.out.println("             ");
+			
 					System.out.println("Ingresando perfil profesional");
+					System.out.println("             ");
 					do {
 						System.out.println("Ingrese nombre del profesional");
 						nombreUsuario = leer.nextLine();
@@ -399,9 +403,9 @@ public class main {
 
 	public static boolean validarFecha(String fecha) {
 		try {
-			SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/mm/yyyy");
-			formatoFecha.parse(fecha);
-		} catch (ParseException e) {
+			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+			LocalDate.parse(fecha, formatter);
+		} catch (Exception e) {
 			return false;
 		}
 		return true;
