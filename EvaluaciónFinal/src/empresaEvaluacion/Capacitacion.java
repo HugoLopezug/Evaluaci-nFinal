@@ -1,6 +1,6 @@
 package empresaEvaluacion;
 
-public class Capacitacion {
+public class Capacitacion extends Cliente {
 
 	private Integer identificador;
 	private Integer rutCliente;

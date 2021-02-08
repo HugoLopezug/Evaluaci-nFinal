@@ -1,6 +1,6 @@
 package empresaEvaluacion;
 
-public class VisitaTerreno {
+public class VisitaTerreno extends Cliente {
 
 	private String identificadorTerreno;
 	private String rutCliente;
@@ -9,13 +9,11 @@ public class VisitaTerreno {
 	private String lugar;
 	private String comentario;
 
-	public VisitaTerreno() {
-		super();
-	}
-
-	public VisitaTerreno(String identificadorTerreno, String rutCliente, String día, String hora, String lugar,
+	public VisitaTerreno(String nombre, String fechaNacimiento, Integer run, Integer rut, String nombres,
+			String apellidos, Integer telefono, String afp, Integer salud, String direccion, String comuna,
+			Integer edad, String identificadorTerreno, String rutCliente, String día, String hora, String lugar,
 			String comentario) {
-		super();
+		super(nombre, fechaNacimiento, run, rut, nombres, apellidos, telefono, afp, salud, direccion, comuna, edad);
 		this.identificadorTerreno = identificadorTerreno;
 		this.rutCliente = rutCliente;
 		this.día = día;
@@ -23,6 +21,11 @@ public class VisitaTerreno {
 		this.lugar = lugar;
 		this.comentario = comentario;
 	}
+
+
+	public VisitaTerreno() {
+	}
+
 
 	public String getIdentificadorTerreno() {
 		return identificadorTerreno;
