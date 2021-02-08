@@ -99,14 +99,14 @@ public class main {
 					do {
 						System.out.println("Ingrese RUN de usuario sin digito verificador (hasta 8 digitos)");
 						run = validarEnteros();
-					} while (run == null || run > 99999999);
+					} while (run == null || run > 99999999 || run < 999999);
 					cliente1.setRun(run);
 					
 					// Almacenar Rut Cliente
 					do {
 						System.out.println("Ingrese RUT de cliente sin digito verificador (hasta 8 digitos)");
 						rut = validarEnteros();
-					} while (rut == null || rut > 99999999);
+					} while (rut == null || rut > 99999999 || run < 999999);
 					cliente1.setRut(rut);
 					
 					// Almacenar Nombres Cliente
@@ -128,7 +128,7 @@ public class main {
 					do {
 						System.out.println("Ingrese telefono de cliente (8 digitos) ");
 						telefono = validarEnteros();
-					} while (telefono == null || telefono<9);
+					} while (telefono == null || telefono > 100000000 || telefono <9999999 );
 					
 					// Almacenar AFP Cliente
 					do {
@@ -179,12 +179,13 @@ public class main {
 
 					Profesional profesional1 = new Profesional();
 
-			
 					System.out.println("Ingresando perfil profesional");
 					System.out.println("             ");
+					
+					// Alamacenar Nombre Profecional 
 					do {
 						System.out.println("Ingrese nombre del profesional");
-						nombreUsuario = leer.nextLine();
+						nombreUsuario = leer.nextLine().strip();
 					} while (nombreUsuario.length() < 10 || nombreUsuario.length() > 30);
 					profesional1.setNombre(nombreUsuario);
 
