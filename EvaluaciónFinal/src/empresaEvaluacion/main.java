@@ -79,11 +79,11 @@ public class main {
 
 					Cliente cliente1 = new Cliente();
 					
-					System.out.println("1. Ingresando perfil de Cliente (min 10 caracteres, max 50)");
+					System.out.println("1. Ingresando perfil de Cliente");
 					System.out.println("             ");
 					// Almacenar Nombre de Usuario
 					do {
-						System.out.println("Ingrese nombre de usuario");
+						System.out.println("Ingrese nombre de usuario (min 10 caracteres, max 50)");
 						nombreUsuario = leer.nextLine().strip();
 					} while (nombreUsuario.length() < 10 || nombreUsuario.length() > 50);
 					cliente1.setNombre(nombreUsuario);
@@ -179,7 +179,7 @@ public class main {
 
 					Profesional profesional1 = new Profesional();
 
-					System.out.println("Ingresando perfil profesional");
+					System.out.println("2. Ingresando perfil profesional");
 					System.out.println("             ");
 					
 					// Alamacenar Nombre Usuario
@@ -230,34 +230,43 @@ public class main {
 
 					Administrativo administrativo1 = new Administrativo();
 
-					System.out.println("Ingresando administrativo" + "\n");
+					System.out.println("3. Ingresando administrativo");
+					System.out.println("  ");
+					
+					// Alamacenar Nombre Usuario
 					do {
-						System.out.println("Ingrese nombre del administrativo");
+						System.out.println("Ingrese nombre del administrativo (min 10 caracteres, max 50)");
 						nombreUsuario = leer.nextLine();
-					} while (nombreUsuario.length() < 10 || nombreUsuario.length() > 30);
+					} while (nombreUsuario.length() < 10 || nombreUsuario.length() > 50);
 					administrativo1.setNombre(nombreUsuario);
 
+					// Alamacenar Fecha de nacimiento del Usuario
 					do {
-						System.out.println("Ingrese fecha de nacimiento del administrativo");
+						System.out.println("Ingrese fecha de nacimiento del administrativo (formato (dd/mm/aaaa)");
 						fechaNacimiento = leer.nextLine();
 						validadorFecha = validarFecha(fechaNacimiento);
 					} while (validadorFecha == false);
 					administrativo1.setFechaNacimiento(fechaNacimiento);
 
+					// Almacenar Run Usuario
 					do {
-						System.out.println("Ingrese RUN del administrativo sin digito verificador	");
+						System.out.println("Ingrese RUN del administrativo sin digito verificador (hasta 8 digitos)");
 						run = validarEnteros();
-					} while (run == null || run > 99999999);
+					} while (run == null || run > 99999999 || run < 999999);
 					administrativo1.setRun(run);
+					
+					// Almacenar Area Administrativo
 					do {
-						System.out.println("Ingrese area");
+						System.out.println("Ingrese area de Administrativo (min 5 caracteres, max 20 )");
 						area = leer.nextLine().strip();
 					} while (area.length() < 5 || area.length() > 100);
 					administrativo1.setArea(area);
+					
+					// Almacenar Experiencia Administrativo
 					do {
-						System.out.println("Ingrese experiencia previa");
-						expPrevia = leer.nextLine();
-					} while (expPrevia.length() > 100);
+						System.out.println("Ingrese experiencia previa (maximo 100 caracteres)");
+						expPrevia = leer.nextLine().strip();
+					} while (expPrevia.length() > 100 );
 					administrativo1.setExperienciaPrevia(expPrevia);
 					listaAsesoria.add(administrativo1);
 					pausa();
@@ -268,7 +277,10 @@ public class main {
 				case 4:
 
 					Capacitacion capacitacion1 = new Capacitacion();
-					System.out.println("Ingresando capacitacion" + "\n");
+					
+					System.out.println("4. Ingresando capacitacion");
+					System.out.println(" ");
+					
 					do {
 						System.out.println("Ingrese identificador (ID) de la capacitacion");
 						id = validarEnteros();
