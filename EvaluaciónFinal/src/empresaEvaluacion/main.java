@@ -169,8 +169,10 @@ public class main {
 					
 					// Almacena Cliente  en Array
 					listaAsesoria.add(cliente1);
-					
+					System.out.println("Cliente ingresado a la base de datos");
 					pausa();
+					limpiarPantalla();
+
 
 					break;
 					
@@ -219,10 +221,11 @@ public class main {
 					} while (validadorFecha == false);
 					profesional1.setFechaIngreso(fechaIngreso);
 					
-					// Almacena profesional  en Array
+					// Almacena profesional en Array
 					listaAsesoria.add(profesional1);
+					System.out.println("Profesional ingresado a la base de datos");
 					pausa();
-
+					limpiarPantalla();
 					break;
 					
 				// Almacenar Administrativo
@@ -236,7 +239,7 @@ public class main {
 					// Alamacenar Nombre Usuario
 					do {
 						System.out.println("Ingrese nombre del administrativo (min 10 caracteres, max 50)");
-						nombreUsuario = leer.nextLine();
+						nombreUsuario = leer.nextLine().strip();
 					} while (nombreUsuario.length() < 10 || nombreUsuario.length() > 50);
 					administrativo1.setNombre(nombreUsuario);
 
@@ -268,9 +271,13 @@ public class main {
 						expPrevia = leer.nextLine().strip();
 					} while (expPrevia.length() > 100 );
 					administrativo1.setExperienciaPrevia(expPrevia);
+					
+					
+					// Almacena Administrativo en Array
 					listaAsesoria.add(administrativo1);
+					System.out.println("Administrativo ingresado a la base de datos");
 					pausa();
-
+					limpiarPantalla();
 					break;
 					
 				// Almacenar Capacitación 
@@ -281,47 +288,64 @@ public class main {
 					System.out.println("4. Ingresando capacitacion");
 					System.out.println(" ");
 					
+					// Almacenar ID Capacitación 
 					do {
-						System.out.println("Ingrese identificador (ID) de la capacitacion");
+						System.out.println("Ingrese identificador (ID) de la capacitacion (solo números)");
 						id = validarEnteros();
 					} while (id == null);
 					capacitacion1.setIdentificador(id);
+					
+					// Almacenar rut cliente  Capacitación 
 					do {
-						System.out.println("Ingrese RUT del cliente");
+						System.out.println("Ingrese RUT del cliente sin digito verificador (hasta 8 digitos)");
 						rut = validarEnteros();
-					} while (rut == null || rut > 99999999);
+					} while (rut == null || rut > 99999999 || rut < 999999);
 					capacitacion1.setRutCliente(rut);
+					
+					// Almacenar día Capacitación 
 					do {
-						System.out.println("Ingrese dia que se realizará la capacitacion");
+						System.out.println("Ingrese dia que se realizará la capacitacion (lunes a domingo)");
 						diaCapacitacion = leer.nextLine().toLowerCase();
 					} while (!diaCapacitacion.equals("lunes") && !diaCapacitacion.equals("martes")
 							&& !diaCapacitacion.equals("miercoles") && !diaCapacitacion.equals("jueves")
 							&& !diaCapacitacion.equals("viernes") && !diaCapacitacion.equals("sabado")
 							&& !diaCapacitacion.equals("domingo"));
 					capacitacion1.setDia(diaCapacitacion);
+					
+					// Almacenar Hora Capacitación 
 					do {
-						System.out.println("Ingrese hora que se realizará la capacitacion");
+						System.out.println("Ingrese hora que se realizará la capacitacion (formato hh:mm)");
 						horaCapacitacion = leer.nextLine();
 						validadorHora = validarHora(horaCapacitacion);
 					} while (validadorHora == false);
 					capacitacion1.setHora(horaCapacitacion);
+					 
+					//Almacenar lugar Capacitación 
 					do {
-						System.out.println("Ingrese lugar de la capacitacion");
+						System.out.println("Ingrese lugar de la capacitacion min 10 caracteres, max 50)");
 						lugarCapacitacion = leer.nextLine();
 					} while (lugarCapacitacion.length() < 10 || lugarCapacitacion.length() > 50);
 					capacitacion1.setLugar(lugarCapacitacion);
+					
+					//Almacenar Duracion Capacitación 
 					do {
-						System.out.println("Ingrese duracion de horas de la capacitacion");
+						System.out.println("Ingrese duracion de horas de la capacitacion (solo numeros)");
 						duracionCapacitacion = validarEnteros();
 					} while (duracionCapacitacion == null);
 					capacitacion1.setDuracion(duracionCapacitacion);
+					
+					//Almacenar cantidad participantes Capacitación 
 					do {
-						System.out.println("Ingrese la cantidad de participantes");
+						System.out.println("Ingrese la cantidad de participantes (solo numeros)");
 						asistCapacitacion = validarEnteros();
 					} while (asistCapacitacion == null || (asistCapacitacion < 0 || asistCapacitacion > 1000));
 					capacitacion1.setCantidadAsistentes(asistCapacitacion);
+					
+					//Almacenar Capacitación en array
 					listaCapacitacion.add(capacitacion1);
-
+					System.out.println("Capacitacion ingresada a la base de datos");
+					pausa();
+					limpiarPantalla();
 					break;
 					
 				// Eliminar Usuario
@@ -448,4 +472,14 @@ public class main {
 	 * SimpleDateFormat("HH:mm:ss"); Date date = sdf.parse(myDateString);
 	 */
 
+	
+	
+	public static void limpiarPantalla() {
+
+		for (int i = 0; i < 10; i++)
+			System.out.println();
+	}
+	
+
+	
 }
