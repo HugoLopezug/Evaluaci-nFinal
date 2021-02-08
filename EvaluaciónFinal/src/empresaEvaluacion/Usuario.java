@@ -62,16 +62,9 @@ public class Usuario implements Asesoria {
 
 	@Override
 	public void analizarUsuario() {
-
 		System.out.println("Nombre: " + getNombre());
 		System.out.println("Run: " + getRun());
 	}
 	
-	
-	@Override
-	public int darRut() {
-		return getRun();
-		
-	}
 
 }

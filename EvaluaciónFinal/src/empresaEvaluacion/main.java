@@ -18,43 +18,18 @@ public class main {
 		List<Capacitacion> listaCapacitacion = new ArrayList<Capacitacion>();
 
 		Contenedor sc2 = new Contenedor(listaAsesoria, listaCapacitacion);
-		/*
-		 
-		 * Capacitacion(22142, "2532647132-2", "16/20/2021", "11:20", "Santiago", 16,
-		 * 6); listaCapacitacion.add(capacitacion1);
-		 * 
-		 * Capacitacion capacitacion2 = new Capacitacion(22143, "16743673-2",
-		 * "19/01/2021", "16:20", "Santiago", 20, 8);
-		 * listaCapacitacion.add(capacitacion2);
-		 * 
-		 * // 6 Listar USuarios sc2.analizarUsuario(); System.out.println(" ");
-		 * 
-		 * // 8 Listr Capacitaciones sc2.mostrarCapacitacion();
-		 * System.out.println("     ");
-		 * 
-		 * System.out.println(sc2.getListaAsesoria().size());
-		 * System.out.println(sc2.getListaCapacitacion().size());
-		 * System.out.println("     ");
-		 * 
-		 * // 5 eliminar Usuario listaAsesoria.remove(admin1);
-		 * System.out.println("     ");
-		 * 
-		 * // 6 Listar USuarios sc2.analizarUsuario();
-		 * System.out.println(sc2.getListaAsesoria().size());
-		 * System.out.println(sc2.getListaCapacitacion().size());
-	*/
 
 		Integer opcion, rut, run, sistsalud, edad, id, duracionCapacitacion, asistCapacitacion, telefono;
-		String fechaNacimiento, nombreUsuario, nombresCliente, apellidosCliente, afp, direccion, comuna,
-				titulo, fechaIngreso, area, expPrevia, diaCapacitacion, horaCapacitacion, lugarCapacitacion;
+		String fechaNacimiento, nombreUsuario, nombresCliente, apellidosCliente, afp, direccion, comuna, titulo,
+				fechaIngreso, area, expPrevia, diaCapacitacion, horaCapacitacion, lugarCapacitacion;
+
 		boolean validadorFecha = false, validadorHora = false;
 
 		Scanner leer = new Scanner(System.in);
 
 		// MENÚ
 
-		System.out.println("INVENTARIO DE PERFILES Y CAPACITACIONES");
-		System.out.println("");
+		System.out.println("INVENTARIO DE PERFILES Y CAPACITACIONES"+"\n");
 		do {
 			do {
 				System.out.println("1.- Ingresar Usuario tipo cliente");
@@ -69,324 +44,321 @@ public class main {
 				opcion = validarEnteros();
 				System.out.println("             ");
 
-			// PAra que no de error al ingresar letra
+				// PAra que no de error al ingresar letra
+
 			} while (opcion == null);
 
 			switch (opcion) {
-				
-				// 1 Almacenar Cliente 
+
+				// 1 Almacenar Cliente
 				case 1:
 
-					Cliente cliente1 = new Cliente();
-					
-					System.out.println("1. Ingresando perfil de Cliente");
-					System.out.println("             ");
-					// Almacenar Nombre de Usuario
-					do {
-						System.out.println("Ingrese nombre de usuario (min 10 caracteres, max 50)");
-						nombreUsuario = leer.nextLine().strip();
-					} while (nombreUsuario.length() < 10 || nombreUsuario.length() > 50);
-					cliente1.setNombre(nombreUsuario);
-					
-					// Almacenar fecha de nacimiento de Usuario
-					do {
-						System.out.println("Ingrese fecha de nacimiento de usuario (formato dd/mm/aaaa)");
-						fechaNacimiento = leer.nextLine();
-						validadorFecha = validarFecha(fechaNacimiento);
-					} while (validadorFecha == false);
-					
-					// Almacenar Run Usuario
-					do {
-						System.out.println("Ingrese RUN de usuario sin digito verificador (hasta 8 digitos)");
-						run = validarEnteros();
-					} while (run == null || run > 99999999 || run < 999999);
-					cliente1.setRun(run);
-					
-					// Almacenar Rut Cliente
-					do {
-						System.out.println("Ingrese RUT de cliente sin digito verificador (hasta 8 digitos)");
-						rut = validarEnteros();
-					} while (rut == null || rut > 99999999 || run < 999999);
-					cliente1.setRut(rut);
-					
-					// Almacenar Nombres Cliente
-					leer.nextLine();
-					do {
-						System.out.println("Ingrese nombres de cliente (min 5 caracteres, max 30)");
-						nombresCliente = leer.nextLine().strip();
-					} while (nombresCliente.length() < 5 || nombresCliente.length() > 30);
-					cliente1.setNombre(nombresCliente);
-					
-					// Almacenar Apellidos Cliente
-					do {
-						System.out.println("Ingrese apellidos de cliente (min 5 caracteres, max 30)");
-						apellidosCliente = leer.nextLine().strip();
-					} while (apellidosCliente.length() < 5 || apellidosCliente.length() > 30);
-					cliente1.setApellidos(apellidosCliente);
-					
-					// Almacenar Telefono Cliente
-					do {
-						System.out.println("Ingrese telefono de cliente (8 digitos) ");
-						telefono = validarEnteros();
-					} while (telefono == null || telefono > 100000000 || telefono <9999999 );
-					
-					// Almacenar AFP Cliente
-					do {
-						System.out.println("Ingrese AFP de cliente (min 4 caracteres, max 30)");
-						afp = leer.nextLine().strip();
-					} while (afp.length() < 4 || afp.length() > 30);
-					cliente1.setAfp(afp);
-					
-					// Almacenar Sistema de Salud Cliente
-					do {
-						System.out.println("Sistema de salud de cliente, Ingrese:");
-						System.out.println("1 para Fonasa ");
-						System.out.println("2 para Isapre ");
-						sistsalud = validarEnteros();
-					} while (sistsalud == null || sistsalud < 1 || sistsalud > 2);
-					cliente1.setSalud(sistsalud);
-					
-					// Almacenar Direccion Cliente
-					do {
-						System.out.println("Ingrese direccion de cliente (maximo 70 caracteres)");
-						direccion = leer.nextLine().strip();
-					} while (direccion.length() > 70 || direccion == "");
-					cliente1.setDireccion(direccion);
-					
-					// Almacenar Comuna Cliente
-					do {
-						System.out.println("Ingrese comuna de cliente  (maximo 50 caracteres)");
-						comuna = leer.nextLine().strip();
-					} while (comuna.length() > 50 || comuna == "");
-					cliente1.setComuna(comuna);
-					
-					// Almacenar Edad Cliente
-					do {
-						System.out.println("Ingrese edad de cliente (rango de edad 0-150 años)" + "\n");
-						edad = validarEnteros();
-					} while (edad == null || edad < 0 || edad > 150);
-					cliente1.setEdad(edad);
-					
-					// Almacena Cliente  en Array
+					/*
+					 * Cliente cliente1 = new Cliente();
+					 * 
+					 * System.out.println("1. Ingresando perfil de Cliente");
+					 * System.out.println("             "); // Almacenar Nombre de Usuario do {
+					 * System.out.println("Ingrese nombre de usuario (min 10 caracteres, max 50)");
+					 * nombreUsuario = leer.nextLine().strip(); } while (nombreUsuario.length() < 10
+					 * || nombreUsuario.length() > 50); cliente1.setNombre(nombreUsuario);
+					 * 
+					 * // Almacenar fecha de nacimiento de Usuario do { System.out.
+					 * println("Ingrese fecha de nacimiento de usuario (formato dd/mm/aaaa)");
+					 * fechaNacimiento = leer.nextLine(); validadorFecha =
+					 * validarFecha(fechaNacimiento); } while (validadorFecha == false);
+					 * 
+					 * // Almacenar Run Usuario do { System.out.
+					 * println("Ingrese RUN de usuario sin digito verificador (hasta 8 digitos)");
+					 * run = validarEnteros(); } while (run == null || run > 99999999 || run <
+					 * 999999); cliente1.setRun(run);
+					 * 
+					 * // Almacenar Rut Cliente do { System.out.
+					 * println("Ingrese RUT de cliente sin digito verificador (hasta 8 digitos)");
+					 * rut = validarEnteros(); } while (rut == null || rut > 99999999 || run <
+					 * 999999); cliente1.setRut(rut);
+					 * 
+					 * // Almacenar Nombres Cliente leer.nextLine(); do {
+					 * System.out.println("Ingrese nombres de cliente (min 5 caracteres, max 30)");
+					 * nombresCliente = leer.nextLine().strip(); } while (nombresCliente.length() <
+					 * 5 || nombresCliente.length() > 30); cliente1.setNombre(nombresCliente);
+					 * 
+					 * // Almacenar Apellidos Cliente do {
+					 * System.out.println("Ingrese apellidos de cliente (min 5 caracteres, max 30)"
+					 * ); apellidosCliente = leer.nextLine().strip(); } while
+					 * (apellidosCliente.length() < 5 || apellidosCliente.length() > 30);
+					 * cliente1.setApellidos(apellidosCliente);
+					 * 
+					 * // Almacenar Telefono Cliente do {
+					 * System.out.println("Ingrese telefono de cliente (8 digitos) "); telefono =
+					 * validarEnteros(); } while (telefono == null || telefono > 100000000 ||
+					 * telefono <9999999 );
+					 * 
+					 * // Almacenar AFP Cliente do {
+					 * System.out.println("Ingrese AFP de cliente (min 4 caracteres, max 30)"); afp
+					 * = leer.nextLine().strip(); } while (afp.length() < 4 || afp.length() > 30);
+					 * cliente1.setAfp(afp);
+					 * 
+					 * // Almacenar Sistema de Salud Cliente do {
+					 * System.out.println("Sistema de salud de cliente, Ingrese:");
+					 * System.out.println("1 para Fonasa "); System.out.println("2 para Isapre ");
+					 * sistsalud = validarEnteros(); } while (sistsalud == null || sistsalud < 1 ||
+					 * sistsalud > 2); cliente1.setSalud(sistsalud);
+					 * 
+					 * // Almacenar Direccion Cliente do {
+					 * System.out.println("Ingrese direccion de cliente (maximo 70 caracteres)");
+					 * direccion = leer.nextLine().strip(); } while (direccion.length() > 70 ||
+					 * direccion == ""); cliente1.setDireccion(direccion);
+					 * 
+					 * // Almacenar Comuna Cliente do {
+					 * System.out.println("Ingrese comuna de cliente  (maximo 50 caracteres)");
+					 * comuna = leer.nextLine().strip(); } while (comuna.length() > 50 || comuna ==
+					 * ""); cliente1.setComuna(comuna);
+					 * 
+					 * // Almacenar Edad Cliente do {
+					 * System.out.println("Ingrese edad de cliente (rango de edad 0-150 años)" +
+					 * "\n"); edad = validarEnteros(); } while (edad == null || edad < 0 || edad >
+					 * 150); cliente1.setEdad(edad);
+					 * 
+					 * // Almacena Cliente en Array listaAsesoria.add(cliente1);
+					 * 
+					 */
+					Cliente cliente1 = new Cliente("Hugo Lopez", "16/10/1987", 16743673, 16743673, "Hugo Eduardo",
+							"López Barraza", 42425148, "Habitat", 1, "Achianal 1442", "Las Condes", 32);
 					listaAsesoria.add(cliente1);
-					System.out.println("Cliente ingresado a la base de datos");
-					pausa();
-					limpiarPantalla();
 
+					System.out.println("Cliente ingresado a la base de datos"+"\n");
+					pausa();
 
 					break;
-					
-				// Alamacenar Profecional 
+
+				// Alamacenar Profecional
 				case 2:
+					/*
+					 * Profesional profesional1 = new Profesional();
+					 * 
+					 * System.out.println("2. Ingresando perfil profesional");
+					 * System.out.println("             ");
+					 * 
+					 * // Alamacenar Nombre Usuario do {
+					 * System.out.println("Ingrese nombre del Usuario (min 10 caracteres, max 50)");
+					 * nombreUsuario = leer.nextLine().strip(); } while (nombreUsuario.length() < 10
+					 * || nombreUsuario.length() > 50); profesional1.setNombre(nombreUsuario);
+					 * 
+					 * // Alamacenar Fecha de nacimiento del Usuario do { System.out.
+					 * println("Ingrese fecha de nacimiento del Usuario (formato dd/mm/aaaa)");
+					 * fechaNacimiento = leer.nextLine(); validadorFecha =
+					 * validarFecha(fechaNacimiento); } while (validadorFecha == false);
+					 * profesional1.setFechaNacimiento(fechaNacimiento);
+					 * 
+					 * // Almacenar Run Usuario do { System.out.
+					 * println("Ingrese RUN de usuario sin digito verificador (hasta 8 digitos)");
+					 * run = validarEnteros(); } while (run == null || run > 99999999 || run <
+					 * 999999); profesional1.setRun(run);
+					 * 
+					 * // Alamacenar Titulo Profeional do {
+					 * System.out.println("Ingrese titulo profesional (min 10 caracteres, max 50)");
+					 * titulo = leer.nextLine().strip(); } while (titulo.length() < 10 ||
+					 * titulo.length() > 50); profesional1.setTitulo(titulo);
+					 * 
+					 * // Alamacenar Fecha ingreso Profeional do {
+					 * System.out.println("Ingrese fecha de ingreso (formato (dd/mm/aaaa)");
+					 * fechaIngreso = leer.nextLine(); validadorFecha = validarFecha(fechaIngreso);
+					 * } while (validadorFecha == false);
+					 * profesional1.setFechaIngreso(fechaIngreso);
+					 * 
+					 * // Almacena profesional en Array listaAsesoria.add(profesional1);
+					 */
 
-					Profesional profesional1 = new Profesional();
+					Profesional prof1 = new Profesional("Daniel", "18/02/1990", 17257626, "Ingeniera ambiental",
+							"14/01/2021");
+					listaAsesoria.add(prof1);
 
-					System.out.println("2. Ingresando perfil profesional");
-					System.out.println("             ");
-					
-					// Alamacenar Nombre Usuario
-					do {
-						System.out.println("Ingrese nombre del Usuario (min 10 caracteres, max 50)");
-						nombreUsuario = leer.nextLine().strip();
-					} while (nombreUsuario.length() < 10 || nombreUsuario.length() > 50);
-					profesional1.setNombre(nombreUsuario);
-					
-					// Alamacenar Fecha de nacimiento del Usuario
-					do {
-						System.out.println("Ingrese fecha de nacimiento del Usuario (formato dd/mm/aaaa)");
-						fechaNacimiento = leer.nextLine();
-						validadorFecha = validarFecha(fechaNacimiento);
-					} while (validadorFecha == false);
-					profesional1.setFechaNacimiento(fechaNacimiento);
-					
-					// Almacenar Run Usuario
-					do {
-						System.out.println("Ingrese RUN de usuario sin digito verificador (hasta 8 digitos)");
-						run = validarEnteros();
-					} while (run == null || run > 99999999 || run < 999999);
-					profesional1.setRun(run);
-					
-					// Alamacenar Titulo Profeional 
-					do {
-						System.out.println("Ingrese titulo profesional (min 10 caracteres, max 50)");
-						titulo = leer.nextLine().strip();
-					} while (titulo.length() < 10 || titulo.length() > 50);
-					profesional1.setTitulo(titulo);
-					
-					// Alamacenar Fecha ingreso Profeional 
-					do {
-						System.out.println("Ingrese fecha de ingreso (formato (dd/mm/aaaa)");
-						fechaIngreso = leer.nextLine();
-						validadorFecha = validarFecha(fechaIngreso);
-					} while (validadorFecha == false);
-					profesional1.setFechaIngreso(fechaIngreso);
-					
-					// Almacena profesional en Array
-					listaAsesoria.add(profesional1);
-					System.out.println("Profesional ingresado a la base de datos");
+					Profesional prof2 = new Profesional("Andres", "13/01/1987", 18789568, "Ingeniera agronomo",
+							"11/01/2019");
+					listaAsesoria.add(prof2);
+
+					System.out.println("Profesional ingresado a la base de datos"+"\n");
 					pausa();
-					limpiarPantalla();
 					break;
-					
+
 				// Almacenar Administrativo
 				case 3:
+					/*
+					 * Administrativo administrativo1 = new Administrativo();
+					 * 
+					 * System.out.println("3. Ingresando administrativo"); System.out.println("  ");
+					 * 
+					 * // Alamacenar Nombre Usuario do { System.out.
+					 * println("Ingrese nombre del administrativo (min 10 caracteres, max 50)");
+					 * nombreUsuario = leer.nextLine().strip(); } while (nombreUsuario.length() < 10
+					 * || nombreUsuario.length() > 50); administrativo1.setNombre(nombreUsuario);
+					 * 
+					 * // Alamacenar Fecha de nacimiento del Usuario do { System.out.
+					 * println("Ingrese fecha de nacimiento del administrativo (formato (dd/mm/aaaa)"
+					 * ); fechaNacimiento = leer.nextLine(); validadorFecha =
+					 * validarFecha(fechaNacimiento); } while (validadorFecha == false);
+					 * administrativo1.setFechaNacimiento(fechaNacimiento);
+					 * 
+					 * // Almacenar Run Usuario do { System.out.
+					 * println("Ingrese RUN del administrativo sin digito verificador (hasta 8 digitos)"
+					 * ); run = validarEnteros(); } while (run == null || run > 99999999 || run <
+					 * 999999); administrativo1.setRun(run);
+					 * 
+					 * // Almacenar Area Administrativo do { System.out.
+					 * println("Ingrese area de Administrativo (min 5 caracteres, max 20 )"); area =
+					 * leer.nextLine().strip(); } while (area.length() < 5 || area.length() > 100);
+					 * administrativo1.setArea(area);
+					 * 
+					 * // Almacenar Experiencia Administrativo do {
+					 * System.out.println("Ingrese experiencia previa (maximo 100 caracteres)");
+					 * expPrevia = leer.nextLine().strip(); } while (expPrevia.length() > 100 );
+					 * administrativo1.setExperienciaPrevia(expPrevia);
+					 * 
+					 * 
+					 * // Almacena Administrativo en Array listaAsesoria.add(administrativo1);
+					 */
 
-					Administrativo administrativo1 = new Administrativo();
+					Administrativo admin1 = new Administrativo("Ricardo", "18/02/1984", 14578123, "Logistica",
+							"8 años");
+					listaAsesoria.add(admin1);
 
-					System.out.println("3. Ingresando administrativo");
-					System.out.println("  ");
-					
-					// Alamacenar Nombre Usuario
-					do {
-						System.out.println("Ingrese nombre del administrativo (min 10 caracteres, max 50)");
-						nombreUsuario = leer.nextLine().strip();
-					} while (nombreUsuario.length() < 10 || nombreUsuario.length() > 50);
-					administrativo1.setNombre(nombreUsuario);
+					Administrativo admin2 = new Administrativo("Julio", "14/09/1985", 16547985, "Recursos Humnanos",
+							"5 años");
+					listaAsesoria.add(admin2);
 
-					// Alamacenar Fecha de nacimiento del Usuario
-					do {
-						System.out.println("Ingrese fecha de nacimiento del administrativo (formato (dd/mm/aaaa)");
-						fechaNacimiento = leer.nextLine();
-						validadorFecha = validarFecha(fechaNacimiento);
-					} while (validadorFecha == false);
-					administrativo1.setFechaNacimiento(fechaNacimiento);
+					System.out.println("Administrativo ingresado a la base de datos"+"\n");
 
-					// Almacenar Run Usuario
-					do {
-						System.out.println("Ingrese RUN del administrativo sin digito verificador (hasta 8 digitos)");
-						run = validarEnteros();
-					} while (run == null || run > 99999999 || run < 999999);
-					administrativo1.setRun(run);
-					
-					// Almacenar Area Administrativo
-					do {
-						System.out.println("Ingrese area de Administrativo (min 5 caracteres, max 20 )");
-						area = leer.nextLine().strip();
-					} while (area.length() < 5 || area.length() > 100);
-					administrativo1.setArea(area);
-					
-					// Almacenar Experiencia Administrativo
-					do {
-						System.out.println("Ingrese experiencia previa (maximo 100 caracteres)");
-						expPrevia = leer.nextLine().strip();
-					} while (expPrevia.length() > 100 );
-					administrativo1.setExperienciaPrevia(expPrevia);
-					
-					
-					// Almacena Administrativo en Array
-					listaAsesoria.add(administrativo1);
-					System.out.println("Administrativo ingresado a la base de datos");
 					pausa();
-					limpiarPantalla();
 					break;
-					
-				// Almacenar Capacitación 
+
+				// Almacenar Capacitación
 				case 4:
+					/*
+					 * Capacitacion capacitacion1 = new Capacitacion();
+					 * 
+					 * System.out.println("4. Ingresando capacitacion"); System.out.println(" ");
+					 * 
+					 * // Almacenar ID Capacitación do { System.out.
+					 * println("Ingrese identificador (ID) de la capacitacion (solo números)"); id =
+					 * validarEnteros(); } while (id == null); capacitacion1.setIdentificador(id);
+					 * 
+					 * // Almacenar rut cliente Capacitación do { System.out.
+					 * println("Ingrese RUT del cliente sin digito verificador (hasta 8 digitos)");
+					 * rut = validarEnteros(); } while (rut == null || rut > 99999999 || rut <
+					 * 999999); capacitacion1.setRutCliente(rut);
+					 * 
+					 * // Almacenar día Capacitación do { System.out.
+					 * println("Ingrese dia que se realizará la capacitacion (lunes a domingo)");
+					 * diaCapacitacion = leer.nextLine().toLowerCase(); } while
+					 * (!diaCapacitacion.equals("lunes") && !diaCapacitacion.equals("martes") &&
+					 * !diaCapacitacion.equals("miercoles") && !diaCapacitacion.equals("jueves") &&
+					 * !diaCapacitacion.equals("viernes") && !diaCapacitacion.equals("sabado") &&
+					 * !diaCapacitacion.equals("domingo")); capacitacion1.setDia(diaCapacitacion);
+					 * 
+					 * // Almacenar Hora Capacitación do { System.out.
+					 * println("Ingrese hora que se realizará la capacitacion (formato hh:mm)");
+					 * horaCapacitacion = leer.nextLine(); validadorHora =
+					 * validarHora(horaCapacitacion); } while (validadorHora == false);
+					 * capacitacion1.setHora(horaCapacitacion);
+					 * 
+					 * //Almacenar lugar Capacitación do { System.out.
+					 * println("Ingrese lugar de la capacitacion min 10 caracteres, max 50)");
+					 * lugarCapacitacion = leer.nextLine().strip(); } while
+					 * (lugarCapacitacion.length() < 10 || lugarCapacitacion.length() > 50);
+					 * capacitacion1.setLugar(lugarCapacitacion);
+					 * 
+					 * //Almacenar Duracion Capacitación do { System.out.
+					 * println("Ingrese duracion de horas de la capacitacion (solo numeros)");
+					 * duracionCapacitacion = validarEnteros(); } while (duracionCapacitacion ==
+					 * null); capacitacion1.setDuracion(duracionCapacitacion);
+					 * 
+					 * //Almacenar cantidad participantes Capacitación do {
+					 * System.out.println("Ingrese la cantidad de participantes (solo numeros)");
+					 * asistCapacitacion = validarEnteros(); } while (asistCapacitacion == null ||
+					 * (asistCapacitacion < 0 || asistCapacitacion > 1000));
+					 * capacitacion1.setCantidadAsistentes(asistCapacitacion);
+					 * 
+					 * //Almacenar Capacitación en array listaCapacitacion.add(capacitacion1);
+					 */
 
-					Capacitacion capacitacion1 = new Capacitacion();
-					
-					System.out.println("4. Ingresando capacitacion");
-					System.out.println(" ");
-					
-					// Almacenar ID Capacitación 
-					do {
-						System.out.println("Ingrese identificador (ID) de la capacitacion (solo números)");
-						id = validarEnteros();
-					} while (id == null);
-					capacitacion1.setIdentificador(id);
-					
-					// Almacenar rut cliente  Capacitación 
-					do {
-						System.out.println("Ingrese RUT del cliente sin digito verificador (hasta 8 digitos)");
-						rut = validarEnteros();
-					} while (rut == null || rut > 99999999 || rut < 999999);
-					capacitacion1.setRutCliente(rut);
-					
-					// Almacenar día Capacitación 
-					do {
-						System.out.println("Ingrese dia que se realizará la capacitacion (lunes a domingo)");
-						diaCapacitacion = leer.nextLine().toLowerCase();
-					} while (!diaCapacitacion.equals("lunes") && !diaCapacitacion.equals("martes")
-							&& !diaCapacitacion.equals("miercoles") && !diaCapacitacion.equals("jueves")
-							&& !diaCapacitacion.equals("viernes") && !diaCapacitacion.equals("sabado")
-							&& !diaCapacitacion.equals("domingo"));
-					capacitacion1.setDia(diaCapacitacion);
-					
-					// Almacenar Hora Capacitación 
-					do {
-						System.out.println("Ingrese hora que se realizará la capacitacion (formato hh:mm)");
-						horaCapacitacion = leer.nextLine();
-						validadorHora = validarHora(horaCapacitacion);
-					} while (validadorHora == false);
-					capacitacion1.setHora(horaCapacitacion);
-					 
-					//Almacenar lugar Capacitación 
-					do {
-						System.out.println("Ingrese lugar de la capacitacion min 10 caracteres, max 50)");
-						lugarCapacitacion = leer.nextLine().strip();
-					} while (lugarCapacitacion.length() < 10 || lugarCapacitacion.length() > 50);
-					capacitacion1.setLugar(lugarCapacitacion);
-					
-					//Almacenar Duracion Capacitación 
-					do {
-						System.out.println("Ingrese duracion de horas de la capacitacion (solo numeros)");
-						duracionCapacitacion = validarEnteros();
-					} while (duracionCapacitacion == null);
-					capacitacion1.setDuracion(duracionCapacitacion);
-					
-					//Almacenar cantidad participantes Capacitación 
-					do {
-						System.out.println("Ingrese la cantidad de participantes (solo numeros)");
-						asistCapacitacion = validarEnteros();
-					} while (asistCapacitacion == null || (asistCapacitacion < 0 || asistCapacitacion > 1000));
-					capacitacion1.setCantidadAsistentes(asistCapacitacion);
-					
-					//Almacenar Capacitación en array
+					Capacitacion capacitacion1 = new Capacitacion(22142, 253264713, "16/20/2021", "11:20", "Santiago",
+							16, 6);
 					listaCapacitacion.add(capacitacion1);
-					System.out.println("Capacitacion ingresada a la base de datos");
+
+					Capacitacion capacitacion2 = new Capacitacion(22143, 16743673, "19/01/2021", "16:20", "Santiago",
+							20, 8);
+					listaCapacitacion.add(capacitacion2);
+					capacitacion1.setCantidadAsistentes(8);
+
+					System.out.println("Capacitacion ingresada a la base de datos"+"\n");
+
 					pausa();
-					limpiarPantalla();
 					break;
-					
+
 				// Eliminar Usuario
 				case 5:
 
 					System.out.println("Eliminando usuario" + "\n");
-					do {
-						System.out.println(
-								"Ingrese el rut del usuario registrado que desea eliminar de la base de datos");
-						rut = validarEnteros();
-					} while (rut == null);
-					Asesoria eliminando = sc2.eliminarUsuario(rut);
-					listaAsesoria.remove(eliminando);
-
-					break;
 					
-				// Lisar Usuarios 
+					do { System.out.println( "Ingrese el RUN del usuario registrado que desea eliminar de la base de datos");
+					run = validarEnteros(); 
+					} while (run == null);
+					
+					sc2.eleminarUsuario(run); 
+				
+					break;
+
+
+					// Lisar Usuarios
 				case 6:
 
 					System.out.println("Mostrando usuarios registrados" + "\n");
-					sc2.analizarUsuario();
+					sc2.mostrarUsuario();
 
 					break;
-				// Listar Usuario por tipo 
+
+				// Listar Usuario por tipo
 				case 7:
 
-					System.out.println("Mostrando usuarios registrados" + "\n");
-					String elegirUsuario;
-					elegirUsuario = leer.nextLine();
-					sc2.mostrarUsuariosPorTipo(elegirUsuario);
-
-					break;
+					System.out.println("7- Mostrando usuarios registrados por tipo");
 					
-				// Listar Capacitaciones 
+							Integer elegirUsuario;
+					
+	                do {
+	                    System.out.println("Elija la opcion que quiera ver: (Ingrese numero)");
+	                    System.out.println("1.- Cliente");
+	                    System.out.println("2.- Profesional");
+	                    System.out.println("3.- Administrativo");
+	                    elegirUsuario = validarEnteros();
+	                } while (elegirUsuario == null || (elegirUsuario != 1 && elegirUsuario != 2 && elegirUsuario != 3));
+
+	                switch (elegirUsuario) {
+	                case 1:
+
+	                    sc2.mostrarCliente();
+
+	                    break;
+	                case 2:
+
+	                    sc2.mostrarProfesional();
+
+	                    break;
+	                case 3:
+
+	                    sc2.mostrarAdministrativo();
+
+	                }
+	                    
+	                    break;
+
+				// Listar Capacitaciones
 				case 8:
 
 					System.out.println("Capacitaciones registradas" + "\n");
 					sc2.mostrarCapacitacion();
 
 					break;
-					
+
 				// Salir
 				case 9:
 
@@ -424,7 +396,6 @@ public class main {
 	/**
 	 * Metodo que valida la entrada solo de enteros, evitando error de consola
 	 * 
-	 * @return num
 	 */
 
 	public static Integer validarEnteros() {
@@ -472,14 +443,4 @@ public class main {
 	 * SimpleDateFormat("HH:mm:ss"); Date date = sdf.parse(myDateString);
 	 */
 
-	
-	
-	public static void limpiarPantalla() {
-
-		for (int i = 0; i < 10; i++)
-			System.out.println();
-	}
-	
-
-	
 }
