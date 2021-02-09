@@ -1,5 +1,7 @@
 package empresaEvaluacion;
 
+import java.util.List;
+
 public class Cliente extends Usuario {
 
 	private Integer rut;
@@ -11,7 +13,9 @@ public class Cliente extends Usuario {
 	private String direccion;
 	private String comuna;
 	private Integer edad;
-	
+	private List<Capacitacion> capacitaciones;
+	private List<VisitaTerreno> visitas;
+	private List<Accidente> accidentes;
 
 	public Cliente(String nombre, String fechaNacimiento, Integer run, Integer rut, String nombres, String apellidos,
 			Integer telefono, String afp, Integer salud, String direccion, String comuna, Integer edad) {

@@ -1,6 +1,6 @@
 package empresaEvaluacion;
 
-public class Capacitacion extends Cliente {
+public class Capacitacion {
 
 	private Integer identificador;
 	private Integer rutCliente;
@@ -9,21 +9,20 @@ public class Capacitacion extends Cliente {
 	private String lugar;
 	private Integer duracion;
 	private Integer cantidadAsistentes;
-
-	public Capacitacion() {
-		
-	}
+	private Cliente clienteCapacitacion;
 
 	public Capacitacion(Integer identificador, Integer rutCliente, String dia, String hora, String lugar,
 			Integer duracion, Integer cantidadAsistentes) {
-		super();
 		this.identificador = identificador;
-		this.rutCliente = rutCliente;
 		this.dia = dia;
 		this.hora = hora;
 		this.lugar = lugar;
 		this.duracion = duracion;
 		this.cantidadAsistentes = cantidadAsistentes;
+	}
+
+	public Capacitacion() {
+
 	}
 
 	public Integer getIdentificador() {

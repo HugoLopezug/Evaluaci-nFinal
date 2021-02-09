@@ -8,6 +8,7 @@ public class VisitaTerreno extends Cliente {
 	private String hora;
 	private String lugar;
 	private String comentario;
+	private Cliente clienteVisita;
 
 	public VisitaTerreno(String nombre, String fechaNacimiento, Integer run, Integer rut, String nombres,
 			String apellidos, Integer telefono, String afp, Integer salud, String direccion, String comuna,

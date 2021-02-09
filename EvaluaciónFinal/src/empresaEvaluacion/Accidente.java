@@ -9,14 +9,13 @@ public class Accidente {
 	private String lugar;
 	private String origen;
 	private String consecuencia;
+	// parametro para generar relacion de asociacion con Cliente
+	private Cliente clientesAccidente;
 
-	public Accidente() {
-		super();
-	}
+	
 
 	public Accidente(String identificador, String rutCliente, String díaSemana, String hora, String lugar,
 			String origen, String consecuencia) {
-		super();
 		this.identificador = identificador;
 		this.rutCliente = rutCliente;
 		this.díaSemana = díaSemana;
@@ -26,6 +25,10 @@ public class Accidente {
 		this.consecuencia = consecuencia;
 	}
 
+	public Accidente() {
+	}
+	
+	
 	public String getIdentificador() {
 		return identificador;
 	}
