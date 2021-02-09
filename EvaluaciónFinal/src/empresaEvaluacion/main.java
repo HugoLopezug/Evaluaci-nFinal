@@ -345,7 +345,7 @@ public class main {
 						run = validarEnteros();
 					} while (run == null);
 
-					sc2.eleminarUsuario(run);
+					sc2.eliminarUsuario(run);
 
 					break;
 
