@@ -1,5 +1,6 @@
 package empresaEvaluacion;
 
+// clase usuario
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
@@ -10,15 +11,15 @@ public class Usuario implements Asesoria {
 	private String fechaNacimiento;
 	private Integer run;
 
-	public Usuario() {
-
-	}
-
 	public Usuario(String nombre, String fechaNacimiento, Integer run) {
 		super();
 		this.nombre = nombre;
 		this.fechaNacimiento = fechaNacimiento;
 		this.run = run;
+	}
+
+	public Usuario() {
+
 	}
 
 	public String getNombre() {
@@ -50,6 +51,8 @@ public class Usuario implements Asesoria {
 		return "Usuario [nombre=" + nombre + ", fechaNacimiento=" + fechaNacimiento + ", rut=" + run + "]";
 	}
 
+	// metodo mostrar edad, decuelve edad de usuario de acuerdo a su fecha de
+	// nacimiento
 	public void mostrarEdad() {
 
 		DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
@@ -60,11 +63,12 @@ public class Usuario implements Asesoria {
 
 	}
 
+	// metodo analizar usuario implementado por asesoria, devuelve nombre y run
+	// junto con datos de cliente, profesional o administrativo
 	@Override
 	public void analizarUsuario() {
 		System.out.println("Nombre: " + getNombre());
 		System.out.println("Run: " + getRun());
 	}
-	
 
 }

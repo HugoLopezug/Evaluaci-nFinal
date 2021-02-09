@@ -1,5 +1,5 @@
 package empresaEvaluacion;
-
+// Clase Visita a terreno 
 public class VisitaTerreno extends Cliente {
 
 	private String identificadorTerreno;
@@ -12,12 +12,12 @@ public class VisitaTerreno extends Cliente {
 	private Cliente clienteVisita;
 
 	public VisitaTerreno(String nombre, String fechaNacimiento, Integer run, Integer rut, String nombres,
-			String apellidos, Integer telefono, String afp, Integer salud, String direccion, String comuna,
+			String apellidos,
+			Integer telefono, String afp, Integer salud, String direccion, String comuna,
 			Integer edad, String identificadorTerreno, String rutCliente, String día, String hora, String lugar,
 			String comentario) {
 		super(nombre, fechaNacimiento, run, rut, nombres, apellidos, telefono, afp, salud, direccion, comuna, edad);
 		this.identificadorTerreno = identificadorTerreno;
-		this.rutCliente = rutCliente;
 		this.día = día;
 		this.hora = hora;
 		this.lugar = lugar;

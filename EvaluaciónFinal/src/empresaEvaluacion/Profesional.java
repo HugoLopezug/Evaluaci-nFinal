@@ -1,5 +1,6 @@
 package empresaEvaluacion;
 
+// Clase Profesional 
 public class Profesional extends Usuario {
 
 	private String titulo;
@@ -36,6 +37,8 @@ public class Profesional extends Usuario {
 		return "Profesional [titulo=" + titulo + ", fechaIngreso=" + fechaIngreso + "]";
 	}
 
+	// metodo analizar usuario implementado por asesoria. Devuelve titulo y fecha de
+	// ingreso junto con datos de usuario
 	@Override
 	public void analizarUsuario() {
 

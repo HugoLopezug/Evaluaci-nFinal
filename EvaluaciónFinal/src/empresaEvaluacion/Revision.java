@@ -1,5 +1,5 @@
 package empresaEvaluacion;
-
+// clase revision 
 public class Revision {
 
 	private String identificadorRevision;
@@ -12,7 +12,6 @@ public class Revision {
 	}
 	public Revision(String identificadorRevision, String identificadorVisitaTerreno, String nombreRevision,
 			String detalle, Integer estado) {
-		super();
 		this.identificadorRevision = identificadorRevision;
 		IdentificadorVisitaTerreno = identificadorVisitaTerreno;
 		this.nombreRevision = nombreRevision;

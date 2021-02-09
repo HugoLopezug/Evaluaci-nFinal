@@ -1,5 +1,6 @@
 package empresaEvaluacion;
 
+// Clase Capacitación 
 public class Capacitacion {
 
 	private Integer identificador;
@@ -82,6 +83,8 @@ public class Capacitacion {
 		this.cantidadAsistentes = cantidadAsistentes;
 	}
 
+	// metodo mostrar detalle, entrega información de la capacitación y duración en
+	// minutos.
 	String mostrarDetalle() {
 		String detalle;
 

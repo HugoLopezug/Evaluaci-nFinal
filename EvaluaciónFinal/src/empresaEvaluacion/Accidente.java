@@ -1,5 +1,5 @@
 package empresaEvaluacion;
-
+// Clase para los accidentes
 public class Accidente {
 
 	private String identificador;
@@ -17,7 +17,6 @@ public class Accidente {
 	public Accidente(String identificador, String rutCliente, String díaSemana, String hora, String lugar,
 			String origen, String consecuencia) {
 		this.identificador = identificador;
-		this.rutCliente = rutCliente;
 		this.díaSemana = díaSemana;
 		this.hora = hora;
 		this.lugar = lugar;

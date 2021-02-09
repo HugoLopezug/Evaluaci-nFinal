@@ -1,7 +1,7 @@
 package empresaEvaluacion;
 
 import java.util.List;
-
+// clase Cliente
 public class Cliente extends Usuario {
 
 	private Integer rut;
@@ -107,13 +107,13 @@ public class Cliente extends Usuario {
 	public void setEdad(Integer edad) {
 		this.edad = edad;
 	}
-
+	// metodo Obtener nombre, muestra nombres y apellidos juntos
 	public String obtenerNombre() {
 		String nombrecompleto;
 		nombrecompleto = nombres + " " + apellidos;
 		return nombrecompleto;
 	}
-
+	// metodo sistema de salud, devuelve que tipo de salud tiene el cliente de acuerdo al numero ingresado 
 	public String obtenerSistemaSalud() {
 		String sistema = "";
 
@@ -131,7 +131,7 @@ public class Cliente extends Usuario {
 				+ ", afp=" + afp + ", salud=" + salud + ", direccion=" + direccion + ", comuna=" + comuna + ", edad="
 				+ edad + "]";
 	}
-
+	// metodod Analizar usuario, decuelve direccion y comuna de clente junto con datos de usuario
 	@Override
 	public void analizarUsuario() {
 		super.analizarUsuario();
