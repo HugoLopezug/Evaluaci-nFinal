@@ -60,7 +60,7 @@ public class Contenedor {
 				System.out.println("Usuario fué encontrado, se eliminará de la base de datos");
 			}
 		}
-		System.out.println("El Run no fue encontredo");
+		
 	}
 
 	public void mostrarCliente() {
