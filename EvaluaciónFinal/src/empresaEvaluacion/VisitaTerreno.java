@@ -3,7 +3,6 @@ package empresaEvaluacion;
 public class VisitaTerreno extends Cliente {
 
 	private String identificadorTerreno;
-	private String rutCliente;
 	private String día;
 	private String hora;
 	private String lugar;
@@ -37,13 +36,6 @@ public class VisitaTerreno extends Cliente {
 		this.identificadorTerreno = identificadorTerreno;
 	}
 
-	public String getRutCliente() {
-		return rutCliente;
-	}
-
-	public void setRutCliente(String rutCliente) {
-		this.rutCliente = rutCliente;
-	}
 
 	public String getDía() {
 		return día;
@@ -79,7 +71,7 @@ public class VisitaTerreno extends Cliente {
 
 	@Override
 	public String toString() {
-		return "VisitaTerreno [identificadorTerreno=" + identificadorTerreno + ", rutCliente=" + rutCliente + ", día="
+		return "VisitaTerreno [identificadorTerreno=" + identificadorTerreno  + ", día="
 				+ día + ", hora=" + hora + ", lugar=" + lugar + ", comentario=" + comentario + "]";
 	}
 

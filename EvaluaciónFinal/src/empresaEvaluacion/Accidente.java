@@ -1,9 +1,9 @@
 package empresaEvaluacion;
+
 // Clase para los accidentes
 public class Accidente {
 
 	private String identificador;
-	private String rutCliente;
 	private String díaSemana;
 	private String hora;
 	private String lugar;
@@ -11,8 +11,6 @@ public class Accidente {
 	private String consecuencia;
 	// parametro para generar relacion de asociacion con Cliente
 	private Cliente clientesAccidente;
-
-	
 
 	public Accidente(String identificador, String rutCliente, String díaSemana, String hora, String lugar,
 			String origen, String consecuencia) {
@@ -26,22 +24,13 @@ public class Accidente {
 
 	public Accidente() {
 	}
-	
-	
+
 	public String getIdentificador() {
 		return identificador;
 	}
 
 	public void setIdentificador(String identificador) {
 		this.identificador = identificador;
-	}
-
-	public String getRutCliente() {
-		return rutCliente;
-	}
-
-	public void setRutCliente(String rutCliente) {
-		this.rutCliente = rutCliente;
 	}
 
 	public String getDíaSemana() {
@@ -86,8 +75,8 @@ public class Accidente {
 
 	@Override
 	public String toString() {
-		return "Accidente [identificador=" + identificador + ", rutCliente=" + rutCliente + ", díaSemana=" + díaSemana
-				+ ", hora=" + hora + ", lugar=" + lugar + ", origen=" + origen + ", consecuencia=" + consecuencia + "]";
+		return "Accidente [identificador=" + identificador + ", díaSemana=" + díaSemana + ", hora=" + hora + ", lugar="
+				+ lugar + ", origen=" + origen + ", consecuencia=" + consecuencia + "]";
 	}
 
 }
