@@ -68,6 +68,7 @@ public class main {
 						fechaNacimiento = leer.nextLine();
 						validadorFecha = validarFecha(fechaNacimiento);
 					} while (validadorFecha == false);
+					cliente1.setFechaNacimiento(fechaNacimiento);
 
 					// Almacenar Run Usuario
 					System.out.println("Ingrese RUN de usuario");
@@ -82,7 +83,7 @@ public class main {
 					// Almacenar Nombres Cliente
 					System.out.println("Ingrese nombres de cliente");
 					nombresCliente = validar0530();
-					cliente1.setNombre(nombresCliente);
+					cliente1.setNombres(nombresCliente);
 
 					// Almacenar Apellidos Cliente
 					System.out.println("Ingrese apellidos de cliente");
@@ -94,6 +95,7 @@ public class main {
 						System.out.println("Ingrese telefono de cliente (8 digitos) ");
 						telefono = validarEnteros();
 					} while (telefono == null || telefono > 100000000 || telefono < 9999999);
+					cliente1.setTelefono(telefono);
 
 					// Almacenar AFP Cliente
 					do {
@@ -231,24 +233,28 @@ public class main {
 				case 4:
 
 					Asesoria contieneUsuario;
-
+					// para saber si hay clientes en base de dato
 					contieneUsuario = sc2.encontrarCliente();
 
 					if (contieneUsuario == null) {
 
-						System.out.println(
-								"No tiene ningun cliente registrado en la base de datos, favor antes de cargar una capacitacion, ingrese un cliente");
+						System.out.println("No tiene ningun cliente registrado en la base de datos,"
+								+ " favor antes de cargar una capacitacion, ingrese un cliente");
 						break;
+						// como encuentra empieza a pedir datos de Capacitación
 					} else {
 
 						Capacitacion capacitacion1 = new Capacitacion();
 						System.out.println("IV.- Ingresando capacitacion" + "\n");
+
+						// Almacena identificador Capacitación
 						do {
 							System.out.println("Ingrese identificador (ID) de la capacitacion (solo digitos)");
 							id = validarEnteros();
 						} while (id == null);
 						capacitacion1.setIdentificador(id);
-						
+
+						// Busca Run Cliente en base de dato
 						do {
 							System.out.println("Ingrese RUT del cliente sin digito verificador (hasta 8 digitos)");
 							rut = validarEnteros();
@@ -261,8 +267,10 @@ public class main {
 									"rut ingresado no coincide con ninguno registrado en nuestra base de datos");
 							break;
 						} else {
-
+							// Almacena Rut Cliente
 							capacitacion1.setRutCliente(rut);
+
+							// Alamcena Día de Capacitación
 							do {
 								System.out.println("Escriba el dia de la capacitacion (lunes a domingo)");
 								diaCapacitacion = leer.nextLine().toLowerCase();
@@ -271,29 +279,36 @@ public class main {
 									&& !diaCapacitacion.equals("viernes") && !diaCapacitacion.equals("sabado")
 									&& !diaCapacitacion.equals("domingo"));
 							capacitacion1.setDia(diaCapacitacion);
+
+							// Almacena Hora de Capacitación
 							do {
 								System.out.println("Ingrese hora que se realizará la capacitacion (formato hh:mm)");
 								horaCapacitacion = leer.nextLine();
 								validadorHora = validarHora(horaCapacitacion);
 							} while (validadorHora == false);
 							capacitacion1.setHora(horaCapacitacion);
-							do {
-								System.out.println("Ingrese lugar de la capacitacion (min 10 caracteres, max 50)");
-								lugarCapacitacion = leer.nextLine();
-							} while (lugarCapacitacion.length() < 10 || lugarCapacitacion.length() > 50);
+
+							// Almacena lugar capacitacion
+							System.out.println("Ingrese lugar de la capacitacion");
+							lugarCapacitacion = validar1050();
 							capacitacion1.setLugar(lugarCapacitacion);
+
+							//Almacena Hora Capacitación 
 							do {
 								System.out.println("Ingrese duracion de horas de la capacitacion (solo digitos)");
 								duracionCapacitacion = validarEnteros();
 							} while (duracionCapacitacion == null);
 							capacitacion1.setDuracion(duracionCapacitacion);
+							
+							// Almacena Cantidad PArticipantes
 							do {
 								System.out.println("Ingrese la cantidad de participantes (solo digitos)");
 								asistCapacitacion = validarEnteros();
 							} while (asistCapacitacion == null || (asistCapacitacion < 0 || asistCapacitacion > 1000));
 							capacitacion1.setCantidadAsistentes(asistCapacitacion);
+							
+							//Almacena Capacitación al Array
 							listaCapacitacion.add(capacitacion1);
-
 							System.out.println("Capacitacion ingresada a la base de datos" + "\n");
 							pausa();
 						}
