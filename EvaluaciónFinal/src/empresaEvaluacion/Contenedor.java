@@ -54,7 +54,7 @@ public class Contenedor{
 	
 	
 	public void eliminarUsuario(int run) {
-		
+	
 		 for (int i = 0; i < listaAsesoria.size(); i++) { 
 
 			 if (run == ((Usuario) listaAsesoria.get(i)).getRun()) {
