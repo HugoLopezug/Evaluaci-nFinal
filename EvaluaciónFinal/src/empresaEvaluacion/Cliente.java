@@ -13,6 +13,7 @@ public class Cliente extends Usuario {
 	private String direccion;
 	private String comuna;
 	private Integer edad;
+	// parametros para generar relacion de asociacion con clases
 	private List<Capacitacion> capacitaciones;
 	private List<VisitaTerreno> visitas;
 	private List<Accidente> accidentes;

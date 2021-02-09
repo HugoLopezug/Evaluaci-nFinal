@@ -9,6 +9,7 @@ public class Capacitacion {
 	private String lugar;
 	private Integer duracion;
 	private Integer cantidadAsistentes;
+	// parametro para generar relacion de asociacion con Cliente
 	private Cliente clienteCapacitacion;
 
 	public Capacitacion(Integer identificador, Integer rutCliente, String dia, String hora, String lugar,
