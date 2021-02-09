@@ -57,7 +57,7 @@ public class Contenedor {
 
 			if (run == ((Usuario) listaAsesoria.get(i)).getRun()) {
 				listaAsesoria.remove(i);
-				System.out.println("Usuario fué encontrado, se eliminará de la base de datos");
+				System.out.println("Usuario fue encontrado, se eliminará de la base de datos");
 			}
 		}
 		
