@@ -116,6 +116,30 @@ public void mostrarAdministrativo() {
 	}
 		System.out.println("   ");
 }
+
+public Asesoria encontrarCliente() {
+
+	for (Asesoria cliente : listaAsesoria) {
+		if (("Cliente").equals(cliente.getClass().getSimpleName())) {
+
+			return cliente;
+		}
+	}
+	return null;
+}
+
+public boolean compararRut(int rut) {
+
+	for (int i = 0; i < listaAsesoria.size(); i++) {
+
+		if (rut == ((Cliente) listaAsesoria.get(i)).getRun()) {
+
+			return true;
+		}
+	}
+	return false;
+
+}
 	
 	
 	public void mostrarCapacitacion() {
