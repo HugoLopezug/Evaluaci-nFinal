@@ -329,7 +329,6 @@ public class main {
 
 						System.out.println("Capacitacion ingresada a la base de datos" + "\n");
 						pausa();
-						limpiarPantalla();
 						}}
 
 					break;

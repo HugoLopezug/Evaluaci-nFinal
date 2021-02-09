@@ -53,7 +53,7 @@ public class Contenedor{
 	}
 	
 	
-	public void eleminarUsuario(int run) {
+	public void eliminarUsuario(int run) {
 		
 		 for (int i = 0; i < listaAsesoria.size(); i++) { 
 
