@@ -30,6 +30,7 @@ public class Contenedor {
 		this.listaCapacitacion = listaCapacitacion;
 	}
 
+	// metodo analizarUsuario imprime datos obtnidos por metodo
 	public void analizarUsuario() {
 
 		System.out.println("-------------Lista Usuarios---------------");
@@ -39,6 +40,7 @@ public class Contenedor {
 		}
 	}
 
+	// metodo mostrar Usuario, imprime datos de clase Usuario 
 	public void mostrarUsuario() {
 
 		System.out.println("-------------Lista Usuarios---------------");
@@ -51,6 +53,7 @@ public class Contenedor {
 		System.out.println("   ");
 	}
 
+	// metodo eliminar Usuario elimina usuario segun su rut 
 	public void eliminarUsuario(int run) {
 
 		for (int i = 0; i < listaAsesoria.size(); i++) {
@@ -62,7 +65,7 @@ public class Contenedor {
 		}
 		
 	}
-
+	// metodo mostrar cliente, imprime datos de clase cliente 
 	public void mostrarCliente() {
 
 		System.out.println("-------------Lista Cliente---------------");
@@ -85,6 +88,7 @@ public class Contenedor {
 		System.out.println("   ");
 	}
 
+	// metodo mostrar profesional, imprime datos de clase profesional 
 	public void mostrarProfesional() {
 
 		System.out.println("-------------Lista Profesional---------------");
@@ -97,7 +101,8 @@ public class Contenedor {
 		}
 		System.out.println("   ");
 	}
-
+	
+	// metodo mostrar adminsitrativo, imprime datos de clase administrativo
 	public void mostrarAdministrativo() {
 
 		System.out.println("-------------Lista Administrativo---------------");
@@ -112,6 +117,7 @@ public class Contenedor {
 		System.out.println("   ");
 	}
 
+	// metodo encontrar cliente, busca un cliente en array asesoria
 	public Asesoria encontrarCliente() {
 
 		for (Asesoria cliente : listaAsesoria) {
@@ -123,6 +129,7 @@ public class Contenedor {
 		return null;
 	}
 
+	// metodo comparar rut, busca rut en array asesoria 
 	public boolean compararRut(int rut) {
 
 		for (int i = 0; i < listaAsesoria.size(); i++) {
@@ -135,7 +142,7 @@ public class Contenedor {
 		return false;
 
 	}
-
+   // mostrar Capcitación, imprime datos de capacitación y clientes 
 	public void mostrarCapacitacion() {
 		System.out.println("-------------Lista Capacitaciones---------------");
 		for (Capacitacion auxCapacitacion : listaCapacitacion) {
